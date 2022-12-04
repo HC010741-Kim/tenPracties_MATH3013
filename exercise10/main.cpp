@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <assert.h>
-//#include <memory>
+
 using namespace std;
 class vector_expression{
 public:
@@ -25,12 +25,6 @@ public:
         data = new double[my_size];
     }
 
-    //vector(const vector& v)
-    //        : my_size(v.my_size), data(new double[my_size])
-    //{
-    //    for (unsigned i= 0; i < my_size; ++i)
-    //        data[i]= v.data[i];
-    //}
     ~vector(){
         my_size = 0;
         delete[] data;
@@ -44,10 +38,7 @@ public:
             data[i]= src.data[i];
         return *this;
     }
-    //vector(vector&& v): my_size(v.my_size), data(v.data){
-    //    v.data= nullptr;
-    //    v.my_size= 0;
-    //}
+
     vector& operator=(vector&& src)
     {
         assert(my_size == 0 || my_size == src.my_size);
